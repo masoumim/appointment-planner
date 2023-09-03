@@ -35,7 +35,6 @@ export default function ContactsContainer() {
 
         // Check if the entered name is already in the array
         if (!duplicateName) {
-            console.log(`No Duplicate - adding contact...`);
             const newContact = {};
             newContact.name = event.target[0].value;
             newContact.phone = event.target[1].value;
@@ -48,9 +47,6 @@ export default function ContactsContainer() {
             setFormInputName("");
             setFormInputPhone("");
             setFormInputEmail("");
-        }
-        else {
-            console.log('Duplicate Found!');
         }
     }
 
@@ -76,7 +72,6 @@ export default function ContactsContainer() {
         <>
             <div>
                 <section>
-                    <h2>Add Contact</h2>
                     <ContactsForm
                         handleContactFormSubmit={handleContactFormSubmit}
                         formInputName={formInputName}
@@ -90,7 +85,6 @@ export default function ContactsContainer() {
                 </section>
                 <hr />
                 <section>
-                    <h2>Contacts</h2>
                     <Contacts contacts={contacts} />
                 </section>
             </div>

@@ -1,7 +1,11 @@
-export default function Contacts({contacts}) {
+import TileList from "@/components/tile-list";
+export default function Contacts(props) {
+    // Extract the array of contact objects from 'props'
+    const contacts = props.contacts;    
     return (
         <>
-        <p>Render tiles here for each contact in prop</p>    
+            <h2>Contacts</h2>
+            <TileList objArray={contacts} />
         </>
     );
 }
