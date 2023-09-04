@@ -1,11 +1,9 @@
 import TileList from "@/components/tile-list";
-export default function Appointments(props) {
-    // Extract the array of contact objects from 'props'
-    const appointments = props.appointments;    
+export default function Appointments(props) { 
     return (
         <>
             <h2>Appointments</h2>
-            <TileList objArray={appointments} />
+            <TileList objArray={props.appointments} />
         </>
     );
 }

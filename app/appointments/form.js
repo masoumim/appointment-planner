@@ -1,3 +1,4 @@
+import ContactPicker from "./contact-picker";
 export default function AppointmentForm(props){        
     return (
         <>
@@ -6,7 +7,7 @@ export default function AppointmentForm(props){
                 <input value={props.formInputAppointmentName} onChange={props.handleAppointmentNameInput} required name="name" id="name" type="text" />                
                 <input value={props.formInputAppointmentDate} onChange={props.handleAppointmentDateInput} required name="date" id="date" type="date" min={props.currentDate}/>
                 <input value={props.formInputAppointmentTime} onChange={props.handleAppointmentTimeInput} required name="time" id="time" type="time" />                
-                {/* ContactPicker Goes here */}
+                <ContactPicker onChange={props.handleAppointmentContactInput} contacts={props.contacts} />
                 <button type="submit">Add Appointment</button>
             </form>
             <b>{props.formInputMsg}</b>

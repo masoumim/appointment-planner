@@ -50,6 +50,8 @@ export default function AppointmentsContainer() {
             newAppointment.time = timeConversion(event.target[2].value);
             newAppointment.contact = event.target[3].value;
 
+            // TODO: Add full contact info
+
             // Use spread operator to add new appointment to end of array
             setAppointments((appointments) => [...appointments, newAppointment]);
 
@@ -80,7 +82,7 @@ export default function AppointmentsContainer() {
     }
 
     // Updates the 'formInputAppointmentContact' state var on every change to the input field
-    function handleAppointmentContactInput(event) {
+    function handleAppointmentContactInput(event) {        
         // Set the state variable
         setFormInputAppointmentContact(event.target.value);
     }
@@ -138,10 +140,10 @@ export default function AppointmentsContainer() {
                         handleAppointmentDateInput={handleAppointmentDateInput}
                         handleAppointmentTimeInput={handleAppointmentTimeInput}
                         handleAppointmentContactInput={handleAppointmentContactInput}
-                        formInputAppointmentName={formInputAppointmentName}
-                        formInputAppointmentContact={formInputAppointmentContact}
+                        formInputAppointmentName={formInputAppointmentName}                        
                         formInputAppointmentDate={formInputAppointmentDate}
                         formInputAppointmentTime={formInputAppointmentTime}
+                        formInputAppointmentContact={formInputAppointmentContact}
                         formInputMsg={formInputMsg}
                         contacts={contacts}
                         currentDate={currentDate}
