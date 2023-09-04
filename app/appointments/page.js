@@ -1,15 +1,9 @@
 // Appointments - this page handles the appointments UI
-
-export default function Appointments({}) {
+import AppointmentsContainer from "./container";
+export default function AppointmentsPage({}) {
   return (
     <div>
-      <section>
-        <h2>Add Appointment</h2> 
-      </section>
-      <hr />
-      <section>
-        <h2>Appointments</h2>
-      </section>
+      <AppointmentsContainer/>
     </div>
   );
 }

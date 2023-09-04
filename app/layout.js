@@ -1,8 +1,9 @@
-// app/layout.js - The JSX returned by a layout file will be applied to ALL other pages
+// layout.js - The JSX returned by a layout file will be applied to ALL other pages
 import Link from "next/link"
+import Providers from "@/components/providers"
 
 export const metadata = {
-  title: 'Appointment Planner'  
+  title: 'Appointment Planner'
 }
 
 export default function RootLayout({ children }) {
@@ -13,8 +14,10 @@ export default function RootLayout({ children }) {
           <Link href={"/"}>Home</Link>
           <Link href={"/contacts"}>Contacts</Link>
           <Link href={"/appointments"}>Appointments</Link>
-        </nav>        
-        {children}
+        </nav>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   )
