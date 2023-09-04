@@ -5,7 +5,7 @@
 import { useState, useEffect, useContext } from "react"
 import ContactsForm from "./form";
 import Contacts from "./contacts";
-import { ContactsContext } from "@/components/providers";
+import { ctx } from "@/components/providers";
 
 export default function ContactsContainer() {
 
@@ -15,7 +15,7 @@ export default function ContactsContainer() {
     const [formInputEmail, setFormInputEmail] = useState("");           // Contact Form Email value
     const [duplicateName, setDuplicateName] = useState(false);          // Boolean state to indicate if contacts array already has name
     const [formInputNameMsg, setFormInputNameMsg] = useState("");       // Name field input feedback message
-    const contactsCtx = useContext(ContactsContext);                    // Shared 'contacts' context
+    const contactsCtx = useContext(ctx);                                // The Context object
     const contacts = contactsCtx[0];                                    // State array of contacts
     const setContacts = contactsCtx[1];                                 // State array setter
 
@@ -80,12 +80,12 @@ export default function ContactsContainer() {
                 <section>
                     <ContactsForm
                         handleContactFormSubmit={handleContactFormSubmit}
-                        formInputName={formInputName}
-                        formInputPhone={formInputPhone}
-                        formInputEmail={formInputEmail}
                         handleNameInput={handleNameInput}
                         handlePhoneInput={handlePhoneInput}
                         handleEmailInput={handleEmailInput}
+                        formInputName={formInputName}
+                        formInputPhone={formInputPhone}
+                        formInputEmail={formInputEmail}
                         formInputNameMsg={formInputNameMsg}
                     />
                 </section>
