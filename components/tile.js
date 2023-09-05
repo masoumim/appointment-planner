@@ -5,16 +5,48 @@ export default function Tile(props) {
     // Get an array of the values of each property in the 'description' object
     const descriptionValues = Object.values(description);
 
-    // TODO: Add a 'type' prop to tile-list -> tile and conditionally render either a contact or appointment
-
-    return (
-        <>
-            <p className="tile-title">{name}</p>
-            {descriptionValues.map((value, index) => {
-                return (
-                    <p key={index} className="tile">{value}</p>
-                );
-            })}
-        </>
-    );
+    // Conditionally render either a Contact or Appointment
+    // (Contact's have a name property + 2 additional properties whereas Appointments have 3 additional properties)
+    // Render Contact:
+    if (descriptionValues.length === 2) {
+        return (
+            <>
+                <div className="contact-tile">
+                    <div className="contact-tile-title">
+                        <div className="contact-tile-title-icon" />
+                        <p>{name}</p>
+                    </div>
+                    {descriptionValues.map((value, index) => {
+                        return (
+                            <div className={`contact-tile-prop-${index}`}>
+                                <div className={`contact-tile-prop-${index}-icon`} />
+                                <p key={index}>{value}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </>
+        );
+    }
+    // Render Appointment:
+    else {
+        return (
+            <>
+                <div className="appointment-tile">
+                    <div className="appointment-tile-title">
+                        <div className="appointment-tile-title-icon" />
+                        <p>{name}</p>
+                    </div>
+                    {descriptionValues.map((value, index) => {
+                        return (
+                            <div className={`appointment-tile-prop-${index}`}>
+                                <div className={`appointment-tile-prop-${index}-icon`} />
+                                <p key={index}>{value}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </>
+        );
+    }
 }

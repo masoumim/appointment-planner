@@ -1,0 +1,206 @@
+/* Globals / Reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #181D31;
+  color: #F0E9D2;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background-color: #334854;
+  padding: 1rem 3rem;
+  font-weight: bold;
+}
+
+/* Appointment Tile */
+.appointment-tile {
+  background-color: #F0E9D2;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 25rem;
+  color: #334854;
+  font-size: 1.3rem;
+}
+
+/* Appointment name / description */
+.appointment-tile-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #E6DDC4;
+  gap: 1rem;
+  margin: 0.5rem;
+}
+
+.appointment-tile-title-icon {
+  background-image: url("/zondicons/notifications.svg");
+  height: 25px;
+  width: 25px;
+}
+
+/* Appointment Date*/
+.appointment-tile-prop-0 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #E6DDC4;
+  gap: 1rem;
+  margin: 0.5rem;
+}
+
+.appointment-tile-prop-0-icon {
+  background-image: url("/zondicons/calendar.svg");
+  height: 25px;
+  width: 25px;
+}
+
+/* Appointment Time */
+.appointment-tile-prop-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #E6DDC4;
+  gap: 1rem;
+  margin: 0.5rem;
+}
+
+.appointment-tile-prop-1-icon {
+  background-image: url("/zondicons/time.svg");
+  height: 25px;
+  width: 25px;
+}
+
+/* Appointment Contact */
+.appointment-tile-prop-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #E6DDC4;
+  gap: 1rem;
+  margin: 0.5rem;
+}
+
+.appointment-tile-prop-2-icon {
+  background-image: url("/zondicons/user.svg");
+  height: 25px;
+  width: 25px;
+}
+
+/* Contact Tile */
+.contact-tile {
+  background-color: #F0E9D2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  color: #334854;
+  font-size: 1.5rem;
+}
+
+/* Contact name */
+.contact-tile-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30rem;
+  border: 1px solid red;
+  padding: 0.5rem 2rem;
+  background-color: #E6DDC4;
+  gap: 1rem;
+}
+
+.contact-tile-title-icon {
+  background-image: url("/zondicons/user.svg");
+  height: 25px;
+  width: 25px;
+}
+
+/* Contact Phone*/
+.contact-tile-prop-0 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30rem;
+  border: 1px solid red;
+  padding: 0.5rem 2rem;
+  background-color: #E6DDC4;
+  gap: 1rem;
+}
+
+.contact-tile-prop-0-icon {
+  background-image: url("/zondicons/phone.svg");
+  height: 25px;
+  width: 25px;
+}
+
+/* Contact Email*/
+.contact-tile-prop-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30rem;
+  border: 1px solid red;
+  padding: 0.5rem 2rem;
+  background-color: #E6DDC4;
+  gap: 1rem;
+}
+
+.contact-tile-prop-1-icon {
+  background-image: url("/zondicons/at-symbol.svg");
+  height: 25px;
+  width: 25px;
+}

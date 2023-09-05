@@ -1,0 +1,47 @@
+/* 
+Appointments CSS
+================
+This CSS Module file works together with the local layout.js file in the same directory 
+*/
+
+.appointments h2{
+    text-align: center;
+    margin: 1rem;
+}
+
+/* Form */
+.appointments form{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #334854;
+    padding: 1rem;
+}
+
+.appointments input{
+    margin: 0 1rem;
+}
+
+.appointments select{
+    margin: 0 1rem;
+}
+
+.appointments button {
+    height: 2rem;
+    width: 10rem;
+    background-color: #E6DDC4;        
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    transition-property: background-color;
+    transition-duration: .3s;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #181D31;
+}
+
+.appointments button:hover {
+    background-color: #f3eede;
+}

@@ -89,7 +89,6 @@ export default function ContactsContainer() {
                         formInputNameMsg={formInputNameMsg}
                     />
                 </section>
-                <hr />
                 <section>
                     <Contacts contacts={contacts} />
                 </section>
