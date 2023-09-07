@@ -277,10 +277,10 @@ nav {
 /* Contact Tile */
 .contact-tile {
   height: 5rem;
-  padding: 1rem 0rem;
-  padding: auto 0rem;
   align-content: center;
   background-color: #F0E9D2;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Contact Tile Row */
@@ -288,8 +288,6 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
   background-color: #E6DDC4;
   color: #334854;
   font-size: 1.5rem;
