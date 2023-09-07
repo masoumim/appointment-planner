@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Appointment Planner
+A simple web app that lets you add contacts and appointments.
 
-## Getting Started
+App Link: https://appointment-planner-five.vercel.app/
 
-First, run the development server:
+# Project technical details:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+**Language:** Node.js / JavaScript
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Framework:** [Next.js 13](https://nextjs.org)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**Styling:** Flexbox / CSS Grid
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Deployment platform:** [Vercel](https://vercel.com)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+# Project info:
+This multi-page web app project demonstrates a few key aspects of the Next.js 13 framework. Next.js is slowly beginning to phase out it's 'pages router' in favor of the newer and 'app router'. This project uses this newer app router along with some of it's features. Firstly, the app router itself represents a different way of structuring Next projects whereby routing, route segments and route paths are derived from the project's folder structure. The root folder is now called 'app' and new route segments can be created by nesting folders inside this app folder. In order to expose a route, a page.js file must be present in a nested folder. This allows developers to populate and 'colocate' many files related to a single route / component in one single subfolder while only having a single file (pages.js) be exposed as a route segment. This works well and it is the approach I took with this project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Server Component / Client Component design pattern:
+This new design pattern allows for explicitly indicating a components place in the render process. By default all components are Server components which means they are rendered and processed on the server-side. Client components are rendered on the client-side and are specified as a Client component by including 'use client' at the top most part of a component file. Additionally, a Server component can "become" a Client component if it is imported into a Client component. The idea is to try and keep as much of a project's components as Server components if at all possible. The rules of Server / Client components lend themselves to this design pattern:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. A Server component can freely import and render any client component.
+2. A Client component can not import and render a Server component.
+3. A Server component can only be passed to a Client component as a prop.
 
-## Deploy on Vercel
+This approach creates a natural tendency to utilize Server components "higher up" on the component tree for tasks that are server related such as fetching data, making API calls and so forth. From there, a Server component can then import and render a Client component and pass it's fetched data along so that the Client can render it. The idea is to aim to have the top of the component tree populated by data-fetching Client components and have the Client components father down, ideally as leafs on the tree.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Persisting State between app routes
+In order to persist state data between the different routes of the app, I utilized the [React Context](https://react.dev/learn/passing-data-deeply-with-context) feature. This feature helps not only with persisting state data between different routes but also helps to reduce "prop drilling" in which state data is passed down multiple components as a prop until it is finally used by some component way down at the bottom of the tree. This allows to seemingly "global" state objects that can be used in any component regardless of it's location in relation to the state data. Although this feature is extremely useful, and necessary in this particular project, it becomes obvious very quickly that this feature can become cumbersome if many state objects are being added to a single context and accessed frequently, especially in a larger scale, more complex web app. I used it in this project sparingly and implementing it was straight forward.
