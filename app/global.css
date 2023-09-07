@@ -135,7 +135,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 8rem;
+  width: 9rem;
   background-color: #E6DDC4;
   gap: 1rem;
 }
