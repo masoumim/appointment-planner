@@ -21,17 +21,16 @@ export default function ContactsContainer() {
 
     // Check if 'contacts' array already contains person with 'formInputName'
     // Set 'duplicateName' bool state to true if it does and false if it doesn't
-    useEffect(() => {
-        contacts.forEach((contact) => {
-            if (contact.name === formInputName) {
-                setDuplicateName(true);
-                setFormInputNameMsg("Sorry, a contact with that name already exists");
-            }
-            else {
-                setDuplicateName(false);
-                setFormInputNameMsg("");
-            }
-        });
+    useEffect(() => {        
+        const nameFound = contacts.some(e => e.name === formInputName);
+        if (nameFound) {
+            setDuplicateName(true);
+            setFormInputNameMsg("Sorry, a contact with that name already exists");
+        }
+        else {
+            setDuplicateName(false);
+            setFormInputNameMsg("");
+        }
     }, [formInputName]);
 
     // Handles Contact form submit: adds a new contact to the 'contacts' state array

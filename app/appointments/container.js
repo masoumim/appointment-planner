@@ -25,16 +25,16 @@ export default function AppointmentsContainer() {
     // Check if 'appointments' array already contains appointment with 'formInputAppointmentDate' and 'formInputAppointmentTime'
     // Set 'duplicateAppointment' bool state to true if it does and false if it doesn't
     useEffect(() => {
-        appointments.forEach((appointment) => {
-            if (appointment.date === formInputAppointmentDate && appointment.time === formInputAppointmentTime) {
-                setDuplicateAppointment(true);
-                setFormInputMsg("Sorry, an appointment at that date & time already exists");
-            }
-            else {
-                setDuplicateAppointment(false);
-                setFormInputMsg("");
-            }
-        });
+        const dateFound = appointments.some(e => e.date === formInputAppointmentDate);
+        const timeFound = appointments.some(e => e.time === timeConversion(formInputAppointmentTime));
+        if (dateFound && timeFound) {
+            setDuplicateAppointment(true);
+            setFormInputMsg("Sorry, an appointment at that date & time already exists");
+        }
+        else {
+            setDuplicateAppointment(false);
+            setFormInputMsg("");
+        }
     }, [formInputAppointmentDate, formInputAppointmentTime]);
 
     // Handles Appointment form submit: adds a new appointment to the 'appointments' state array

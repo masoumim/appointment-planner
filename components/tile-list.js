@@ -1,3 +1,4 @@
+// tile-list.js - This component receives either a an array of contacts or an array of appointments and handles each appropriately. 
 import Tile from "./tile";
 export default function TileList(props) {
     // Extract the array of objects from 'props'

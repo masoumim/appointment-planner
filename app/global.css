@@ -42,6 +42,25 @@ a {
   text-decoration: none;
 }
 
+/* HOME PAGE */
+.home-page-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;  
+}
+.home-page-container h2{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 475px) {
+  .home-page-container h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
 /* NAV */
 nav {
   display: flex;
@@ -52,16 +71,30 @@ nav {
   font-weight: bold;
 }
 
+@media only screen and (max-width: 945px) {
+  nav {
+    justify-content: center;
+  }
+}
+
 /* Appointment Tile */
 .appointment-tile {
+  height: 5rem;
+  padding: 1rem 0rem;
+  padding: auto 0rem;
+  align-content: center;
   background-color: #F0E9D2;
+}
+
+/* Appointment Tile Row */
+.appointment-tile-row {
   display: flex;
-  flex-direction: column;
-  margin: 1rem auto;
-  padding: 1rem;
-  width: 25rem;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #E6DDC4;
   color: #334854;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  height: 3rem;
 }
 
 /* Appointment name / description */
@@ -69,12 +102,10 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  width: 22rem;
   background-color: #E6DDC4;
+  padding-left: 1rem;
   gap: 1rem;
-  margin: 0.5rem;
 }
 
 .appointment-tile-title-icon {
@@ -88,12 +119,9 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  width: 11rem;
   background-color: #E6DDC4;
   gap: 1rem;
-  margin: 0.5rem;
 }
 
 .appointment-tile-prop-0-icon {
@@ -107,12 +135,9 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  width: 8rem;
   background-color: #E6DDC4;
   gap: 1rem;
-  margin: 0.5rem;
 }
 
 .appointment-tile-prop-1-icon {
@@ -126,12 +151,9 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  width: 34rem;  
   background-color: #E6DDC4;
   gap: 1rem;
-  margin: 0.5rem;
 }
 
 .appointment-tile-prop-2-icon {
@@ -140,15 +162,136 @@ nav {
   width: 25px;
 }
 
+.appointments-input-msg{  
+  text-align: center;
+}
+
+@media only screen and (max-width: 1235px) {
+
+  /* Appointment Tile Row */
+  .appointment-tile-row {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+
+  /* Appointment Tile */
+  .appointment-tile {
+    height: 12rem;
+    padding: 1rem 0rem;
+    padding: auto 0rem;
+    align-content: center;
+    background-color: #F0E9D2;    
+  }
+
+  /* Appointment Tile Row */
+  .appointment-tile-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10rem;
+  }
+
+  /* Appointment name / description */
+  .appointment-tile-title {
+    width: 24rem;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    background-color: #ddd4bc;
+  }
+
+  /* Appointment Date*/
+  .appointment-tile-prop-0 {
+    width: 24rem;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    background-color: #ddd4bc;
+  }
+
+  /* Appointment Time */
+  .appointment-tile-prop-1 {
+    width: 24rem;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    background-color: #ddd4bc;
+  }
+
+  /* Appointment Contact */
+  .appointment-tile-prop-2 {
+    width: 24rem;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    background-color: #ddd4bc;
+  }
+
+}
+
+@media only screen and (max-width: 425px) {
+
+  /* Appointment Tile */
+  .appointment-tile {
+    height: 27rem;
+  }
+
+  /* Appointment Tile Row */
+  .appointment-tile-row {
+    height: 25rem;
+  }
+
+  /* Appointment name / description */
+  .appointment-tile-title {
+    flex-direction: column;
+    width: 22rem;
+    padding-left: 0rem;
+    padding-top: 1rem;
+  }
+
+  /* Appointment Date*/
+  .appointment-tile-prop-0 {
+    flex-direction: column;
+    width: 22rem;
+    padding-left: 0rem;
+    padding-top: 1rem;
+  }
+
+  /* Appointment Time */
+  .appointment-tile-prop-1 {
+    flex-direction: column;
+    width: 22rem;
+    padding-left: 0rem;
+    padding-top: 1rem;
+  }
+
+  /* Appointment Contact */
+  .appointment-tile-prop-2 {
+    flex-direction: column;
+    width: 22rem;
+    padding-left: 0rem;
+    padding-top: 1rem;
+  }
+
+}
+
 /* Contact Tile */
 .contact-tile {
+  height: 5rem;
+  padding: 1rem 0rem;
+  padding: auto 0rem;
+  align-content: center;
   background-color: #F0E9D2;
+}
+
+/* Contact Tile Row */
+.contact-tile-row {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: space-evenly;
+  background-color: #E6DDC4;
   color: #334854;
   font-size: 1.5rem;
+  height: 3rem;  
 }
 
 /* Contact name */
@@ -156,11 +299,10 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 30rem;
-  border: 1px solid red;
-  padding: 0.5rem 2rem;
+  width: 35rem;
   background-color: #E6DDC4;
   gap: 1rem;
+  padding-left: 1rem;
 }
 
 .contact-tile-title-icon {
@@ -174,9 +316,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 30rem;
-  border: 1px solid red;
-  padding: 0.5rem 2rem;
+  width: 12rem;
   background-color: #E6DDC4;
   gap: 1rem;
 }
@@ -192,9 +332,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 30rem;
-  border: 1px solid red;
-  padding: 0.5rem 2rem;
+  width: 35rem;
   background-color: #E6DDC4;
   gap: 1rem;
 }
@@ -204,3 +342,99 @@ nav {
   height: 25px;
   width: 25px;
 }
+
+.contacts-input-msg{  
+  text-align: center;
+}
+
+@media only screen and (max-width: 1365px) {
+
+  /* Contact Tile Row */
+  .contact-tile-row {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 945px) {
+
+  /* Contact Tile */
+  .contact-tile {
+    height: 12rem;
+    padding: 1rem 0rem;
+    padding: auto 0rem;
+    align-content: center;
+    background-color: #F0E9D2;    
+  }
+
+  /* Contact Tile Row */
+  .contact-tile-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10rem;
+  }
+
+  /* Contact Name */
+  .contact-tile-title {
+    width: 25rem;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    background-color: #ddd4bc;
+  }
+
+  /* Contact Phone */
+  .contact-tile-prop-0 {
+    width: 25rem;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    background-color: #ddd4bc;
+  }
+
+  /* Contact Email */
+  .contact-tile-prop-1 {
+    width: 25rem;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    background-color: #ddd4bc;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+
+  /* Contact Tile */
+  .contact-tile {
+    height: 27rem;
+  }
+
+  /* Contact Tile Row */
+  .contact-tile-row {
+    height: 25rem;
+  }
+
+  /* Contact Name */
+  .contact-tile-title {
+    flex-direction: column;
+    width: 22rem;
+    padding-left: 0rem;
+    padding-top: 1rem;
+  }
+
+  /* Contact Phone */
+  .contact-tile-prop-0 {
+    flex-direction: column;
+    width: 22rem;
+    padding-left: 0rem;
+    padding-top: 1rem;
+  }
+
+  /* Contact Email */
+  .contact-tile-prop-1 {
+    flex-direction: column;
+    width: 22rem;
+    padding-left: 0rem;
+    padding-top: 1rem;
+  }
+}
+
+

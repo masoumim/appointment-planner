@@ -1,3 +1,5 @@
+// tile.js - This file conditionally renders either a contact tiles or appointment tiles. 'Tiles' are containers which are formatted / styled using CSS.
+
 export default function Tile(props) {
     // Destructuring the 'name' property and 'description' object property from 'props'
     const { name, description } = props;
@@ -12,18 +14,20 @@ export default function Tile(props) {
         return (
             <>
                 <div className="contact-tile">
-                    <div className="contact-tile-title">
-                        <div className="contact-tile-title-icon" />
-                        <p>{name}</p>
+                    <div className="contact-tile-row">
+                        <div className="contact-tile-title">
+                            <div className="contact-tile-title-icon" />
+                            <p>{name}</p>
+                        </div>
+                        {descriptionValues.map((value, index) => {
+                            return (
+                                <div key={index} className={`contact-tile-prop-${index}`}>
+                                    <div className={`contact-tile-prop-${index}-icon`} />
+                                    <p>{value}</p>
+                                </div>
+                            );
+                        })}
                     </div>
-                    {descriptionValues.map((value, index) => {
-                        return (
-                            <div className={`contact-tile-prop-${index}`}>
-                                <div className={`contact-tile-prop-${index}-icon`} />
-                                <p key={index}>{value}</p>
-                            </div>
-                        );
-                    })}
                 </div>
             </>
         );
@@ -33,18 +37,20 @@ export default function Tile(props) {
         return (
             <>
                 <div className="appointment-tile">
-                    <div className="appointment-tile-title">
-                        <div className="appointment-tile-title-icon" />
-                        <p>{name}</p>
+                    <div className="appointment-tile-row">
+                        <div className="appointment-tile-title">
+                            <div className="appointment-tile-title-icon" />
+                            <p>{name}</p>
+                        </div>
+                        {descriptionValues.map((value, index) => {
+                            return (
+                                <div key={index} className={`appointment-tile-prop-${index}`}>
+                                    <div className={`appointment-tile-prop-${index}-icon`} />
+                                    <p>{value}</p>
+                                </div>
+                            );
+                        })}
                     </div>
-                    {descriptionValues.map((value, index) => {
-                        return (
-                            <div className={`appointment-tile-prop-${index}`}>
-                                <div className={`appointment-tile-prop-${index}-icon`} />
-                                <p key={index}>{value}</p>
-                            </div>
-                        );
-                    })}
                 </div>
             </>
         );
