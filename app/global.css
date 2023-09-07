@@ -80,8 +80,8 @@ nav {
 /* Appointment Tile */
 .appointment-tile {
   height: 5rem;
-  padding: 1rem 0rem;
-  padding: auto 0rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   align-content: center;
   background-color: #F0E9D2;
 }
